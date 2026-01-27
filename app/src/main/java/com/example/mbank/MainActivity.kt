@@ -18,6 +18,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -34,7 +35,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        addLog("onCreate called")
+        addLog(getString(R.string.log_on_create))
 
         setContent {
             ClassesTheme {
@@ -50,26 +51,26 @@ class MainActivity : ComponentActivity() {
 
     override fun onStart() {
         super.onStart()
-        addLog("onStart called")
+        addLog(getString(R.string.log_on_start))
     }
 
     override fun onResume() {
         super.onResume()
-        addLog("onResume called")
+        addLog(getString(R.string.log_on_resume))
     }
 
     override fun onPause() {
         super.onPause()
-        addLog("onPause called")
+        addLog(getString(R.string.log_on_pause))
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        addLog("onDestroy called")
+        addLog(getString(R.string.log_on_destroy))
     }
 
     private fun addLog(message: String) {
-        Log.d("MainActivityyyyy", message)
+        Log.d("MainActivity", message)
         lifecycleLogs.add(message)
     }
 }
@@ -100,7 +101,7 @@ fun ResumeScreen(
                 Spacer(modifier = Modifier.height(24.dp))
 
                 Text(
-                    text = "lifecycle logs:",
+                    text = stringResource(R.string.lifecycle_logs_title),
                     color = Color.White,
                     fontWeight = FontWeight.Bold,
                     fontSize = 18.sp
@@ -121,7 +122,7 @@ fun ResumeScreen(
             }
 
             items(contactList) { contact ->
-                ContactItem(icon = contact.icon, text = contact.text)
+                ContactItem(icon = contact.icon, textResId = contact.textResId)
                 Spacer(modifier = Modifier.height(12.dp))
             }
         }
@@ -136,20 +137,20 @@ fun ProfileHeader() {
     ) {
         Icon(
             imageVector = Icons.Default.Person,
-            contentDescription = "Profile Icon",
+            contentDescription = stringResource(R.string.profile_icon_description),
             modifier = Modifier.size(120.dp),
             tint = Color.White
         )
 
         Text(
-            text = "Akbar Sharipov",
+            text = stringResource(R.string.profile_name),
             fontSize = 28.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White
         )
 
         Text(
-            text = "Developer",
+            text = stringResource(R.string.profile_role),
             fontSize = 18.sp,
             color = Color(0xFFB0D0E0)
         )
@@ -157,7 +158,7 @@ fun ProfileHeader() {
 }
 
 @Composable
-fun ContactItem(icon: ImageVector, text: String) {
+fun ContactItem(icon: ImageVector, textResId: Int) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -174,7 +175,7 @@ fun ContactItem(icon: ImageVector, text: String) {
         Spacer(modifier = Modifier.width(16.dp))
 
         Text(
-            text = text,
+            text = stringResource(textResId),
             color = Color.White,
             fontSize = 16.sp
         )
@@ -183,13 +184,13 @@ fun ContactItem(icon: ImageVector, text: String) {
 
 data class ContactInfo(
     val icon: ImageVector,
-    val text: String
+    val textResId: Int
 )
 
 val contactList = listOf(
-    ContactInfo(Icons.Default.Phone, "+996 (503) 21-11-12"),
-    ContactInfo(Icons.Default.Person, "@viollenaki"),
-    ContactInfo(Icons.Default.Email, "tanakaakuustik@gmail.com")
+    ContactInfo(Icons.Default.Phone, R.string.contact_phone),
+    ContactInfo(Icons.Default.Person, R.string.contact_telegram),
+    ContactInfo(Icons.Default.Email, R.string.contact_email)
 )
 
 @Preview(showBackground = true)

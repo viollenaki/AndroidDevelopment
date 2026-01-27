@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">MBank</string>
+    
+    <string name="log_on_create">onCreate called</string>
+    <string name="log_on_start">onStart called</string>
+    <string name="log_on_resume">onResume called</string>
+    <string name="log_on_pause">onPause called</string>
+    <string name="log_on_destroy">onDestroy called</string>
+    <string name="lifecycle_logs_title">lifecycle logs:</string>
+    <string name="profile_name">Akbar Sharipov</string>
+    <string name="profile_role">Developer</string>
+    <string name="profile_icon_description">Profile Icon</string>
+    <string name="contact_phone">+996 (503) 21-11-12</string>
+    <string name="contact_telegram">@viollenaki</string>
+    <string name="contact_email">tanakaakuustik@gmail.com</string>
 </resources>
