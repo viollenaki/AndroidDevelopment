@@ -96,16 +96,11 @@ fun ResumeScreen(
                 Spacer(modifier = Modifier.height(24.dp))
             }
 
-            items(contactList) { contact ->
-                ContactItem(icon = contact.icon, text = contact.text)
-                Spacer(modifier = Modifier.height(12.dp))
-            }
-
             item {
                 Spacer(modifier = Modifier.height(24.dp))
 
                 Text(
-                    text = "Lifecycle Logs:",
+                    text = "lifecycle logs:",
                     color = Color.White,
                     fontWeight = FontWeight.Bold,
                     fontSize = 18.sp
@@ -120,6 +115,14 @@ fun ResumeScreen(
                     color = Color(0xFFB0D0E0),
                     fontSize = 14.sp
                 )
+            }
+            item {
+                Spacer(modifier = Modifier.height(32.dp))
+            }
+
+            items(contactList) { contact ->
+                ContactItem(icon = contact.icon, text = contact.text)
+                Spacer(modifier = Modifier.height(12.dp))
             }
         }
     }
