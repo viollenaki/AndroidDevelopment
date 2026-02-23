@@ -63,7 +63,38 @@ class MyCityRepository {
             imageResource = R.drawable.alley,
             category = PlaceCategory.PARKS
         ),
-
+        RecommendedPlace(
+            id = 8,
+            name = "Zeus Statue",
+            description = "A stunning statue of Zeus in the city center.",
+            address = "Green City Beach",
+            imageResource = R.drawable.zeus,
+            category = PlaceCategory.BEACHES
+        ),
+        RecommendedPlace(
+            id = 9,
+            name = "Greece Pier",
+            description = "A picturesque waterfront location with stunning views of the Issyk-Kul.",
+            address = "Green City Beach",
+            imageResource = R.drawable.greece_columns,
+            category = PlaceCategory.BEACHES
+        ),
+        RecommendedPlace(
+            id = 10,
+            name = "The Soviet Tank",
+            description = "A military tank built in the Soviet Union.",
+            address = "City Park",
+            imageResource = R.drawable.tank,
+            category = PlaceCategory.PARKS
+        ),
+        RecommendedPlace(
+            id = 11,
+            name = "New Beach",
+            description = "A beach.",
+            address = "New Beach",
+            imageResource = R.drawable.new_beach,
+            category = PlaceCategory.BEACHES
+        )
     )
 
     fun getCategories(): List<PlaceCategory> = PlaceCategory.entries
