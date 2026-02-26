@@ -26,7 +26,7 @@ class MyCityRepository {
         RecommendedPlace(
             id = 3,
             name = "City Theater",
-            description = "A historic venue featuring live performances and cultural events.",
+            description = "A historic venue featuring live performances and cultural events",
             address = "Abdrahmanova 156",
             imageResource = R.drawable.theater,
             category = PlaceCategory.BUILDINGS
